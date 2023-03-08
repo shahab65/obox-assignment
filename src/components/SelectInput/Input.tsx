@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 import Arrow from "../Icons/Arrow";
-const useStyles = createUseStyles({
+import useIsFocused from "../../hooks/useIsFocused";
+const useStyles = createUseStyles<any, any, { isFocused: boolean }>({
   wrapper: {
     position: "relative",
   },
   input: {
-    border: "1px solid #25262c",
+    outline: 0,
     padding: 16,
     width: "100%",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: ({ isFocused }) => {
+      return isFocused ? "indigo" : "#25262c";
+    },
+    borderRadius: 16,
   },
   arrow: {
     position: "absolute",
@@ -22,7 +29,8 @@ type Props = {
 };
 const Input = (props: Props) => {
   const { value, onChange } = props;
-  const classes = useStyles();
+  const { isFocused, onFocus, onBlur } = useIsFocused();
+  const classes = useStyles({ isFocused });
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -39,8 +47,14 @@ const Input = (props: Props) => {
           onChange={onInputChange}
           onKeyDown={onKeyDown}
           className={classes.input}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
-        <Arrow direction="up" className={classes.arrow} />
+        <Arrow
+          direction={isFocused ? "up" : "down"}
+          className={classes.arrow}
+          fill={isFocused ? "indigo" : "#25262c"}
+        />
       </div>
     </div>
   );

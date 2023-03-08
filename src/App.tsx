@@ -1,12 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import SelectInput from "./components/SelectInput";
+import Home from "./pages/Home/index";
 
 function App() {
   return (
-    <div className="App">
-      <SelectInput />
+    <div>
+      <Home />
     </div>
   );
 }
