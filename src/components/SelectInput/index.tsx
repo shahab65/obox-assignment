@@ -35,6 +35,14 @@ const SelectInput = (props: Props) => {
   const onInputChange = (value: string) => {
     setValue(value);
   };
+  const onSelectOption = (id: number) => {
+    onSelectScience(id);
+    const selectedOption = options.find((opt) => opt.id === id);
+    if (selectedOption) {
+      onInputChange(selectedOption.name);
+    }
+    onHideOptions();
+  };
   return (
     <div className={classes.selectInput} ref={ref}>
       <Input
@@ -47,7 +55,7 @@ const SelectInput = (props: Props) => {
           <Options
             options={options}
             selected={selected}
-            onSelectScience={onSelectScience}
+            onSelectScience={onSelectOption}
           />
         </div>
       )}
