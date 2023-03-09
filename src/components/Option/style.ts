@@ -5,6 +5,12 @@ const useStyles = createUseStyles(() => ({
     display: "flex",
     justifyContent: "space-between",
     marginBottom: 12,
+    padding: "8px 12px",
+    borderRadius: 8,
+    cursor: "pointer",
+    "&:hover": {
+      background: "rgba(0,0,255,.1)",
+    },
   },
 }));
 
