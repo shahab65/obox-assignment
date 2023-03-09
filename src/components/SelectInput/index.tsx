@@ -6,6 +6,9 @@ const useStyles = createUseStyles({
   selectInput: {
     width: 600,
   },
+  suggestions: {
+    position: "relative",
+  },
 });
 const SelectInput = () => {
   const classes = useStyles();
@@ -17,7 +20,9 @@ const SelectInput = () => {
   return (
     <div className={classes.selectInput}>
       <Input value={value} onChange={onInputChange} />
-      <Options />
+      <div className={classes.suggestions}>
+        <Options />
+      </div>
     </div>
   );
 };
