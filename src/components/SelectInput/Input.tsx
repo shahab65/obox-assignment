@@ -27,9 +27,10 @@ const useStyles = createUseStyles<any, any, { isFocused: boolean }>({
 type Props = {
   value: string;
   onChange: (value: string) => void;
+  onShowOptions: () => void;
 };
 const Input = (props: Props) => {
-  const { value, onChange } = props;
+  const { value, onChange, onShowOptions } = props;
   const { isFocused, onFocus, onBlur } = useIsFocused();
   const classes = useStyles({ isFocused });
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +41,10 @@ const Input = (props: Props) => {
       alert("enter key");
     }
   };
+  const onInputFocus = () => {
+    onShowOptions();
+    onFocus();
+  };
   return (
     <div className={classes.wrapper}>
       <div>
@@ -48,7 +53,7 @@ const Input = (props: Props) => {
           onChange={onInputChange}
           onKeyDown={onKeyDown}
           className={classes.input}
-          onFocus={onFocus}
+          onFocus={onInputFocus}
           onBlur={onBlur}
         />
         <Arrow
