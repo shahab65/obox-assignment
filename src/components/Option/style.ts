@@ -4,6 +4,7 @@ const useStyles = createUseStyles(() => ({
   option: {
     display: "flex",
     justifyContent: "space-between",
+    marginBottom: 12,
   },
 }));
 

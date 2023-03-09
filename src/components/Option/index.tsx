@@ -4,15 +4,16 @@ import Text from "components/Text";
 
 type Props = {
   isSelected?: boolean;
+  name: string;
 };
 
 const Option = (props: Props) => {
-  const { isSelected = false } = props;
+  const { name, isSelected = false } = props;
   const classes = useStyles();
 
   return (
     <li className={classes.option}>
-      <Text type={isSelected ? "secondary" : "primary"}>Education</Text>
+      <Text type={isSelected ? "secondary" : "primary"}>{name}</Text>
     </li>
   );
 };
