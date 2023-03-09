@@ -16,9 +16,11 @@ const useStyles = createUseStyles({
 
 type Props = {
   options: OptionsType;
+  selected: number;
+  onSelectScience: (id: number) => void;
 };
 const SelectInput = (props: Props) => {
-  const { options } = props;
+  const { options, selected, onSelectScience } = props;
   const classes = useStyles();
 
   const [value, setValue] = useState("");
@@ -42,7 +44,11 @@ const SelectInput = (props: Props) => {
       />
       {showOptions && (
         <div className={classes.suggestions}>
-          <Options options={options} />
+          <Options
+            options={options}
+            selected={selected}
+            onSelectScience={onSelectScience}
+          />
         </div>
       )}
     </div>

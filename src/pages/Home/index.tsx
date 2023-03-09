@@ -3,11 +3,15 @@ import useStyles from "./style";
 import useScience from "hooks/useScience";
 const Home = () => {
   const classes = useStyles();
-  const { scienceList } = useScience();
+  const { scienceList, selected, onSelectScience } = useScience();
 
   return (
     <div className={classes.home}>
-      <SelectInput options={scienceList} />
+      <SelectInput
+        options={scienceList}
+        selected={selected}
+        onSelectScience={onSelectScience}
+      />
     </div>
   );
 };

@@ -3,6 +3,10 @@ import scienceMockData from "mock/scienceMockData";
 
 const useScience = (initialState = false) => {
   const [scienceList, setScienceList] = useState(scienceMockData);
+  const [selected, setSelected] = useState(0);
+  const onSelectScience = (id: number) => {
+    setSelected(id);
+  };
   // const onFocus = useCallback(() => {
   //   setIsFocused(true);
   // }, []);
@@ -10,7 +14,7 @@ const useScience = (initialState = false) => {
   //   setIsFocused(false);
   // }, []);
 
-  return { scienceList };
+  return { scienceList, selected, onSelectScience };
 };
 
 export default useScience;
