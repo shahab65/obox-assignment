@@ -4,10 +4,10 @@ import Text from "components/Text";
 import Tick from "../Icons/Tick";
 
 type Props = {
-  id: number;
+  id: string;
   isSelected?: boolean;
   name: string;
-  onSelect: (id: number) => void;
+  onSelect: (id: string) => void;
 };
 
 const Option = (props: Props) => {

@@ -1,11 +1,11 @@
 import { ScienceList } from "type/science";
 const scienceMockData: ScienceList = [
   {
-    id: 1,
+    id: "1",
     name: "Education 🎩",
   },
   {
-    id: 2,
+    id: "2",
     name: "Yeeeah, science! 🚓",
   },
 ];

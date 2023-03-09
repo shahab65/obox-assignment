@@ -1,5 +1,5 @@
 export type Science = {
-  id: number;
+  id: string;
   name: string;
 };
 

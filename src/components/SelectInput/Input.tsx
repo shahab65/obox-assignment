@@ -27,10 +27,11 @@ const useStyles = createUseStyles<any, any, { isFocused: boolean }>({
 type Props = {
   value: string;
   onChange: (value: string) => void;
+  onAddOption: () => void;
   onShowOptions: () => void;
 };
 const Input = (props: Props) => {
-  const { value, onChange, onShowOptions } = props;
+  const { value, onChange, onShowOptions, onAddOption } = props;
   const { isFocused, onFocus, onBlur } = useIsFocused();
   const classes = useStyles({ isFocused });
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +39,7 @@ const Input = (props: Props) => {
   };
   const onKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
-      alert("enter key");
+      onAddOption();
     }
   };
   const onInputFocus = () => {

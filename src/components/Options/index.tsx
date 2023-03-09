@@ -5,8 +5,8 @@ import { OptionsType } from "type/Options";
 
 type Props = {
   options: OptionsType;
-  selected: number;
-  onSelectScience: (id: number) => void;
+  selected: string;
+  onSelectScience: (id: string) => void;
 };
 
 const Options = (props: Props) => {

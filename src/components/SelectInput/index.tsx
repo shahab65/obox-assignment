@@ -16,11 +16,12 @@ const useStyles = createUseStyles({
 
 type Props = {
   options: OptionsType;
-  selected: number;
-  onSelectScience: (id: number) => void;
+  selected: string;
+  onSelectScience: (id: string) => void;
+  onAddScience: (name: string) => void;
 };
 const SelectInput = (props: Props) => {
-  const { options, selected, onSelectScience } = props;
+  const { options, selected, onSelectScience, onAddScience } = props;
   const classes = useStyles();
 
   const [value, setValue] = useState("");
@@ -35,7 +36,7 @@ const SelectInput = (props: Props) => {
   const onInputChange = (value: string) => {
     setValue(value);
   };
-  const onSelectOption = (id: number) => {
+  const onSelectOption = (id: string) => {
     onSelectScience(id);
     const selectedOption = options.find((opt) => opt.id === id);
     if (selectedOption) {
@@ -43,12 +44,17 @@ const SelectInput = (props: Props) => {
     }
     onHideOptions();
   };
+  const onAddOption = () => {
+    onAddScience(value);
+    setValue("");
+  };
   return (
     <div className={classes.selectInput} ref={ref}>
       <Input
         value={value}
         onChange={onInputChange}
         onShowOptions={onShowOptions}
+        onAddOption={onAddOption}
       />
       {showOptions && (
         <div className={classes.suggestions}>
