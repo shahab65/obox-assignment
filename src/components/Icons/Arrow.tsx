@@ -14,14 +14,14 @@ interface Props {
   direction?: "up" | "left" | "right" | "down";
   className?: string;
 }
-const Arrow: React.FC<Props> = ({
+const Arrow = ({
   fill = "#25262c",
   width = 15,
   height = 8,
   direction = "down",
   className = "",
   onClick = () => {},
-}) => {
+}: Props) => {
   const dir = getDirection(direction);
   return (
     <svg

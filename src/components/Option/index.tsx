@@ -1,6 +1,7 @@
 import React from "react";
 import useStyles from "./style";
 import Text from "components/Text";
+import Tick from "../Icons/Tick";
 
 type Props = {
   isSelected?: boolean;
@@ -14,6 +15,7 @@ const Option = (props: Props) => {
   return (
     <li className={classes.option}>
       <Text type={isSelected ? "secondary" : "primary"}>{name}</Text>
+      {isSelected && <Tick />}
     </li>
   );
 };
