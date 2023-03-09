@@ -1,29 +1,6 @@
-import React, { useState } from "react";
-import { createUseStyles } from "react-jss";
-import Arrow from "../Icons/Arrow";
-import useIsFocused from "../../hooks/useIsFocused";
-const useStyles = createUseStyles<any, any, { isFocused: boolean }>({
-  wrapper: {
-    position: "relative",
-  },
-  input: {
-    outline: 0,
-    padding: 16,
-    width: "100%",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: ({ isFocused }) => {
-      return isFocused ? "indigo" : "#25262c";
-    },
-    borderRadius: 16,
-    boxShadow: ({ isFocused }) => (isFocused ? " 0 0 2px 0 indigo" : ""),
-  },
-  arrow: {
-    position: "absolute",
-    right: 20,
-    top: 20,
-  },
-});
+import Arrow from "components/Icons/Arrow";
+import useIsFocused from "hooks/useIsFocused";
+import useStyles from "./style";
 type Props = {
   value: string;
   onChange: (value: string) => void;

@@ -1,18 +1,9 @@
-import { useState, useRef, RefObject } from "react";
-import Input from "./Input";
-import { createUseStyles } from "react-jss";
+import { useState, useRef } from "react";
+import Input from "components/Input";
 import Options from "components/Options";
 import { OptionsType } from "type/Options";
 import useOnClickOutside from "hooks/useOnClickOutside";
-
-const useStyles = createUseStyles({
-  selectInput: {
-    width: 600,
-  },
-  suggestions: {
-    position: "relative",
-  },
-});
+import useStyles from "./style";
 
 type Props = {
   options: OptionsType;
