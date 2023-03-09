@@ -8,6 +8,14 @@ const scienceMockData: ScienceList = [
     id: "2",
     name: "Yeeeah, science! 🚓",
   },
+  {
+    id: "3",
+    name: "Sport ⚽",
+  },
+  {
+    id: "4",
+    name: "Games 🎮",
+  },
 ];
 
 export default scienceMockData;
