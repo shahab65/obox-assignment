@@ -1,8 +1,10 @@
 export type ThemeItem = {
-  border: string;
+  primary: string;
+  secondary: string;
 };
 
 const theme: ThemeItem = {
-  border: "red",
+  primary: "#505050",
+  secondary: "indigo",
 };
 export default theme;

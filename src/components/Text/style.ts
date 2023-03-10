@@ -1,9 +1,10 @@
 import { createUseStyles } from "react-jss";
 import { TextType } from "./index";
+import { ThemeItem } from "theme";
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles((theme: ThemeItem) => ({
   text: ({ type }: { type: TextType }) => ({
-    color: type === "primary" ? "#505050" : "indigo",
+    color: type === "primary" ? theme.primary : theme.secondary,
   }),
 }));
 
