@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
-const useStyles = createUseStyles(() => ({
+import { ThemeItem } from "theme";
+const useStyles = createUseStyles((theme: ThemeItem) => ({
   options: {
     position: "absolute",
     top: 12,

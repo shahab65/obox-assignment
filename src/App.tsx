@@ -1,10 +1,11 @@
+import { ThemeProvider } from "react-jss";
 import Home from "./pages/Home/index";
-
+import theme from "./theme";
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Home />
-    </div>
+    </ThemeProvider>
   );
 }
 
